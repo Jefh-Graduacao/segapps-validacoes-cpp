@@ -14,7 +14,10 @@ public:
     std::string message()
     {
         std::stringstream stringStream;
-        stringStream << "O valor informado (" << this->malformedIP << ") não está no formato correto para um endereço IPv6";
+        std::string malformedIp =
+            this->malformedIP.empty() ? "string vazia" : this->malformedIP;
+
+        stringStream << "O valor informado (" << malformedIp << ") não está no formato correto para um endereço IPv6";
         return stringStream.str();
     }
 };
